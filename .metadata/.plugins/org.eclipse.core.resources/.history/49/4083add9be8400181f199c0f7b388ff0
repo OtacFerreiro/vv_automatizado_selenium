@@ -1,0 +1,24 @@
+package br.unipe.calculadora.ux.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class CalculoDoDescontoParaProdutoPage extends PageObject {
+	
+	@FindBy(xpath = "/html/body/div[1]/div[2]/h1")
+	private  WebElement pageTitle;
+	
+	@FindBy(id="tipoCliente")
+    private WebElement selectTipoCliente;
+	
+	@FindBy(id="quantidade")
+    private WebElement campoQuantidade;
+	
+	@FindBy(id = "calculardesconto.button.calcular")
+	private WebElement buttonCalcularDescontoDoProduto;
+	
+	public String getCalculoDoDescontoParaProdutoPageTitle() {
+		return this.pageTitle.getText();
+	}
+
+}

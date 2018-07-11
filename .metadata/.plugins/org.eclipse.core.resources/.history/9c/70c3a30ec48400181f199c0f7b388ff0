@@ -1,0 +1,36 @@
+package br.unipe.calculadora.ux.REQ001_CalcularDesconto;
+
+import java.util.Map;
+
+import br.unipe.calculadora.ux.REQ002_AjudaDoSistema.Steps;
+import cucumber.api.DataTable;
+import cucumber.api.java.pt.Dado;
+import cucumber.api.java.pt.Entao;
+import cucumber.api.java.pt.Quando;
+
+public class REQ001_CalcularDescontoGWT {
+
+	@Steps
+	REQ001_CalcularDescontoSteps steps;
+
+	@Dado("^que estou na página inicial do sistema$")
+	public void que_estou_na_página_inicial_do_sistema() {
+		steps.acesso_pagina_inicial();
+	}
+
+	@Dado("^que acessei a listagem de produtos$")
+	public void verifico_se_estou_listagem_de_produtos(String tituloPagina) throws Exception {
+		steps.verifico_estou_listagem_de_produtos(tituloPagina);
+	}
+	
+	@Quando("^a listagem de produtos possui pelo menos um produto$")
+	public void verifico_se_listagem_de_produtos_possui_produto(String idProduto) throws Exception {
+		steps.verifico_se_listagem_de_produtos_possui_produto(idProduto);
+	}
+	
+	@Entao("^seleciono o produto para calcular desconto$")
+	public void seleciono_produto_para_calcular_desconto() throws Exception {
+		steps.clico_no_botao_calcular_desconto_de_produto();
+	}
+
+}

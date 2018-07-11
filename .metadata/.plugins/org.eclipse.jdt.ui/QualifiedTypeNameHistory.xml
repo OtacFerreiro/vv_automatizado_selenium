@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="br.unipe.calculadora.ux.pages.ListagemDeProdutosPageObject"/>
+<fullyQualifiedTypeName name="br.unipe.calculadora.ux.pages.CalculoDoDescontoParaProdutoPage"/>
+<fullyQualifiedTypeName name="net.thucydides.core.annotations.Step"/>
+<fullyQualifiedTypeName name="cucumber.api.java.pt.Quando"/>
+<fullyQualifiedTypeName name="cucumber.api.java.pt.E"/>
+</qualifiedTypeNameHistroy>

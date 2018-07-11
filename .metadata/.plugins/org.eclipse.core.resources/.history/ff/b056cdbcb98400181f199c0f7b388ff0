@@ -1,0 +1,14 @@
+package br.unipe.calculadora.ux.REQ001_CalcularDesconto;
+
+import br.unipe.calculadora.ux.pages.AjudaDoSistemaPageObject;
+import br.unipe.calculadora.ux.pages.PaginaInicialPageObject;
+import net.thucydides.core.annotations.Step;
+import net.thucydides.core.steps.ScenarioSteps;
+
+import static org.junit.Assert.*;
+
+public class REQ003_CalcularDescontoSteps {
+	
+	
+
+}

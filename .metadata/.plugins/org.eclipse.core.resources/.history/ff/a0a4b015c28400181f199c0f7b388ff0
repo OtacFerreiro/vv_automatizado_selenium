@@ -1,0 +1,5 @@
+package br.unipe.calculadora.ux.REQ001_CalcularDesconto;
+
+public class REQ001_CalcularDescontoGWT {
+
+}

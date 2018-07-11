@@ -1,0 +1,30 @@
+package br.unipe.calculadora.ux.REQ001_CalcularDesconto;
+
+import java.util.Map;
+
+import br.unipe.calculadora.ux.REQ002_AjudaDoSistema.Steps;
+import cucumber.api.DataTable;
+import cucumber.api.java.pt.Dado;
+import cucumber.api.java.pt.Entao;
+
+public class REQ001_CalcularDescontoGWT {
+
+	@Steps
+	REQ001_CalcularDescontoSteps steps;
+
+	@Dado("^que estou na página inicial do sistema$")
+	public void que_estou_na_página_inicial_do_sistema() {
+		steps.acesso_pagina_inicial();
+	}
+
+	@Entao("^verifico se estou listagem de produtos$")
+	public void verifico_se_estou_listagem_de_produtos(DataTable tabela) throws Exception {
+		Map<String, String> dados = tabela.asMap(String.class, String.class);
+
+		steps.verifico_estou_ajuda_do_sistema(
+				dados.get("titulo"),
+				dados.get("secao")
+				);
+	}
+
+}

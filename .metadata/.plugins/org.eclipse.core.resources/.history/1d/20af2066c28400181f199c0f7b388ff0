@@ -1,0 +1,11 @@
+package br.unipe.calculadora.ux.REQ001_CalcularDesconto;
+
+import br.unipe.calculadora.ux.REQ002_AjudaDoSistema.REQ002_AjudaDoSistemaSteps;
+import br.unipe.calculadora.ux.REQ002_AjudaDoSistema.Steps;
+
+public class REQ001_CalcularDescontoGWT {
+	
+	@Steps
+	REQ001_CalcularDescontoSteps steps;
+
+}

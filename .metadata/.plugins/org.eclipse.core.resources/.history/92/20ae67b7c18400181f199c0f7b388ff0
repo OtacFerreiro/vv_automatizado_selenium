@@ -1,0 +1,67 @@
+package br.unipe.calculadora.ux.REQ001_CalcularDesconto;
+
+import br.unipe.calculadora.ux.pages.AjudaDoSistemaPageObject;
+import br.unipe.calculadora.ux.pages.CalculoDoDescontoParaProdutoPage;
+import br.unipe.calculadora.ux.pages.ListagemDeProdutosPageObject;
+import br.unipe.calculadora.ux.pages.PaginaInicialPageObject;
+import net.thucydides.core.annotations.Step;
+import net.thucydides.core.steps.ScenarioSteps;
+
+import static org.junit.Assert.*;
+
+public class REQ001_CalcularDescontoSteps {
+
+	PaginaInicialPageObject initialPage;
+	ListagemDeProdutosPageObject listagemDeProdutosPage;
+	CalculoDoDescontoParaProdutoPage calculoDoDescontoPage;
+
+	@Step
+	public void acesso_pagina_inicial() {
+		this.initialPage.acessarPaginaInicial();
+	}
+
+	@Step
+	public void verifico_estou_listagem_de_produtos(String titulo) {
+		assertTrue(this.listagemDeProdutosPage.getListagemDeProdutosPageTitle().equalsIgnoreCase(titulo));
+	}
+
+	@Step
+	public void verifico_se_listagem_de_produtos_possui_produto(String idProduto) {
+		assertTrue(this.listagemDeProdutosPage.getProdutoDaLista().equalsIgnoreCase(idProduto));
+	}
+
+	@Step
+	public void clico_no_botao_calcular_desconto_de_produto() {
+		this.listagemDeProdutosPage.clicarButtonCalcularDescontoDoProduto();
+	}
+
+	@Step
+	public void verifico_estou_calculo_desconto_produto(String titulo) {
+		assertTrue(this.calculoDoDescontoPage.getCalculoDoDescontoParaProdutoPageTitle().equalsIgnoreCase(titulo));
+	}
+	
+	@Step
+	public void seleciono_tipo_cliente(String tipoCliente) {
+		this.calculoDoDescontoPage.escolherTipoCliente(tipoCliente);
+	}
+	
+	@Step
+	public void preencho_quantidade(String quantidade) {
+		this.calculoDoDescontoPage.preencherQuantidade(quantidade);
+	}
+	
+	@Step
+	public void clico_no_botao_calcular_desconto() {
+		this.calculoDoDescontoPage.clicarButtonCalculoDoDescontoParaProduto();
+	}
+	
+	@Step
+	public void verifico_se_calculo_foi_realizado(String mensagemSucesso) {
+		assertTrue(this.calculoDoDescontoPage.getMensagemSucessoTitle().equalsIgnoreCase(mensagemSucesso));
+	}
+	
+	@Step
+	public void verifico_fator_obtido(String fator) {
+		assertTrue(this.calculoDoDescontoPage.getFatorObtido().contains(fator));
+	}
+}

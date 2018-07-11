@@ -1,0 +1,27 @@
+package br.unipe.calculadora.ux.REQ001_CalcularDesconto;
+
+import br.unipe.calculadora.ux.pages.AjudaDoSistemaPageObject;
+import br.unipe.calculadora.ux.pages.ListagemDeProdutosPageObject;
+import br.unipe.calculadora.ux.pages.PaginaInicialPageObject;
+import net.thucydides.core.steps.ScenarioSteps;
+
+import static org.junit.Assert.*;
+
+public class REQ001_CalcularDescontoSteps {
+
+	PaginaInicialPageObject initialPage;
+	ListagemDeProdutosPageObject listagemDeProdutosPage;
+
+	@Step
+	public void acesso_pagina_inicial() {
+		this.initialPage.acessarPaginaInicial();
+	}
+
+	@Step
+	public void verifico_estou_listagem_de_produtos(String titulo) {
+		assertTrue(this.listagemDeProdutosPage.getListagemDeProdutosPageTitle().equalsIgnoreCase(titulo));
+	}
+
+
+
+}

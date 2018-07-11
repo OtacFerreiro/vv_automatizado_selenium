@@ -1,0 +1,11 @@
+package br.unipe.teste.stubs;
+
+import br.unipe.teste.model.Cliente;
+
+public class ClienteCStub implements Cliente {
+
+	public String getTipoCliente() {
+		return "C";
+	}
+
+}
